@@ -97,6 +97,25 @@ public class StreamTools {
     }
 
     /**
+     * 集合按属性分组 key = keyGetter.apply() value = List<?>
+     *
+     * @param collection 集合数据
+     * @param keyGetter key值
+     * @param valueGetter value值
+     * @param <T>
+     * @param <K>
+     * @return
+     */
+    public static <T, K, V> Map<K, List<V>> groupingBy(Collection<T> collection, Function<T, K> keyGetter,
+        Function<T, V> valueGetter) {
+        if (isEmpty(collection)) {
+            return new HashMap<>(16);
+        }
+        return collection.stream()
+            .collect(Collectors.groupingBy(keyGetter, Collectors.mapping(valueGetter, Collectors.toList())));
+    }
+
+    /**
      * 集合数据条件过滤
      * 
      * @param collection 集合数据

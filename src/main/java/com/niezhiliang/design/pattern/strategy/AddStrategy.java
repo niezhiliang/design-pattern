@@ -1,7 +1,8 @@
 package com.niezhiliang.design.pattern.strategy;
 
-import com.niezhiliang.design.pattern.enums.FormulaMethodEnum;
 import org.springframework.stereotype.Component;
+
+import com.niezhiliang.design.pattern.enums.FormulaMethodEnum;
 
 /**
  * @author niezhiliang

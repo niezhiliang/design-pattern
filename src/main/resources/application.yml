@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring.test
+
+nacos:
+  config:
+    type: yaml
+    #    server-addr: zh-acm.hzzhyjy.cn:8848
+    data-id: test-autorefresh
+    auto-refresh: true
+    bootstrap:
+      enable: true
